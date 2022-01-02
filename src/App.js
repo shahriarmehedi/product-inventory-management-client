@@ -1,9 +1,12 @@
 import './App.css';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <h2>Product Inventory Management test</h2>
+      <AuthProvider>
+
+      </AuthProvider>
     </div>
   );
 }
