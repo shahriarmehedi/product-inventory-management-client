@@ -3,7 +3,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h2>Product Inventory Management Application</h2>
+      <h2>Product Inventory Management test</h2>
     </div>
   );
 }
