@@ -1,4 +1,4 @@
-import { Box, Container, Grid, TextField } from '@mui/material';
+import { Box, Grid, TextField } from '@mui/material';
 import React from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
 import image1 from '../../images/image1.jfif';
@@ -88,7 +88,7 @@ const Login = () => {
                             enable: true,
                             outMode: "bounce",
                             random: false,
-                            speed: 2.5,
+                            speed: 1,
                             straight: false,
                         },
                         number: {
@@ -99,7 +99,7 @@ const Login = () => {
                             value: 80,
                         },
                         opacity: {
-                            value: 0.5,
+                            value: 0.2,
                         },
                         shape: {
                             type: "circle",

@@ -6,21 +6,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-  
+
   Switch,
   Route,
   Link,
-  
+
   useRouteMatch
 } from "react-router-dom";
 
@@ -29,15 +23,16 @@ import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 import AdminDashboard from './AdminDashboard/AdminDashboard';
+import AddProducts from '../../pages/AddProducts/AddProducts';
 
 
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  
+
   const { window } = props;
-  const{admin,logOut}=useFirebase()
+  const { user, logOut } = useFirebase()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
@@ -45,21 +40,23 @@ function Dashboard(props) {
   };
 
   const drawer = (
-    <div>
+    <div className='text-center'>
       <Toolbar />
       <Divider />
-       <Link to={`${url}/payment`}>Payment</Link><br/>
-       
-      {
-        admin&& <Box>
- <Link to={`${url}/makeAdmin`}>Make Admin</Link><br/>
- <Link to={`${url}/admindashboard`}>Admin Dashboard</Link><br/>
-  <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
+      <Link className='bg-teal-400 px-10  py-2 rounded text-white mt-5' to={`${url}/payment`}>Make Payment</Link><br /> <br />
 
-        </Box>
+
+      {
+        user && <div className='text-center'><Box>
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/makeAdmin`}>Make an Admin</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add New Product</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/admindashboard`}>Admin Dashboard</Link><br /> <br />
+          <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
+
+        </Box></div>
       }
-    
-    
+
+
       {/* <List>
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
@@ -70,8 +67,8 @@ function Dashboard(props) {
           </ListItem>
         ))}
       </List> */}
-    
-    
+
+
     </div>
   );
 
@@ -98,7 +95,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-         Dashboard
+            Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -107,14 +104,14 @@ function Dashboard(props) {
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-     
+
         <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -141,33 +138,37 @@ function Dashboard(props) {
         <Toolbar />
 
         <Switch>
-       
-     
-
-        <Route path={`${path}/payment`}>
-    <Payment></Payment>
-        </Route>
-
-    
-
-        <Route path={`${path}/makeAdmin`}>
-<MakeAdmin></MakeAdmin>
-        </Route>
-
-     
-      
-
-        <Route path={`${path}/admindashboard`}>
-<AdminDashboard></AdminDashboard>
-        </Route>
 
 
-      </Switch>
+
+          <Route path={`${path}/payment`}>
+            <Payment></Payment>
+          </Route>
+
+
+
+          <Route path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+          </Route>
+
+          <Route path={`${path}/addProducts`}>
+            <AddProducts></AddProducts>
+          </Route>
+
+
+
+
+          <Route path={`${path}/admindashboard`}>
+            <AdminDashboard></AdminDashboard>
+          </Route>
+
+
+        </Switch>
         <Typography paragraph>
-      
+
         </Typography>
         <Typography paragraph>
-        
+
         </Typography>
       </Box>
     </Box>
@@ -175,7 +176,7 @@ function Dashboard(props) {
 }
 
 Dashboard.propTypes = {
- 
+
   window: PropTypes.func,
 };
 
