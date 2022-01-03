@@ -28,6 +28,7 @@ import useFirebase from '../../hooks/useFirebase';
 import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
+import AdminDashboard from './AdminDashboard/AdminDashboard';
 
 
 
@@ -52,9 +53,7 @@ function Dashboard(props) {
       {
         admin&& <Box>
  <Link to={`${url}/makeAdmin`}>Make Admin</Link><br/>
- <Link to={`${url}/showrider`}>Riders</Link><br/>
- <Link to={`${url}/showlearner`}>Learners</Link><br/>
-
+ <Link to={`${url}/admindashboard`}>Admin Dashboard</Link><br/>
   <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
 
         </Box>
@@ -158,7 +157,10 @@ function Dashboard(props) {
      
       
 
-     
+        <Route path={`${path}/admindashboard`}>
+<AdminDashboard></AdminDashboard>
+        </Route>
+
 
       </Switch>
         <Typography paragraph>
