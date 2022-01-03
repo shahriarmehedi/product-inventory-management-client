@@ -11,12 +11,13 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
 
     ///////// GOOGLE SIGN IN POPUP //////////
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = (location, history) => {
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
-
+                const destination = location?.state?.from || '/dashboard';
+                history.replace(destination);
                 ////////// SET ERROR //////////
             }).catch(error => {
                 setError(error.message)
