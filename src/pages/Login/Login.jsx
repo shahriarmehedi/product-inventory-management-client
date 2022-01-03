@@ -1,5 +1,6 @@
 import { Box, Grid, TextField } from '@mui/material';
 import React from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 import image1 from '../../images/image1.jfif';
 import GoogleIcon from '@mui/icons-material/Google';
 import useAuth from '../../hooks/useAuth';
@@ -7,9 +8,15 @@ import LoginIcon from '@mui/icons-material/Login';
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
+    const location = useLocation();
+    const history = useHistory();
 
     const handleFormSubmit = e => {
         e.preventDefault();
+    }
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle(location, history);
     }
 
     return (
@@ -40,7 +47,7 @@ const Login = () => {
                         />
                         <br />
                         <button className="border-2 rounded px-2 py-2 mr-3 border-blue-300 hover:bg-blue-500"> <LoginIcon /> Log In </button>
-                        <button onClick={signInUsingGoogle} className="border-2 rounded px-2 py-2 border-blue-300 hover:bg-blue-500"> <GoogleIcon /> Log In With Google </button>
+                        <button onClick={handleGoogleSignIn} className="border-2 rounded px-2 py-2 border-blue-300 hover:bg-blue-500"> <GoogleIcon /> Log In With Google </button>
                     </form>
                 </Grid>
             </Grid>
