@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
- 
+
 } from "react-router-dom";
 import Dashboard from './Component/Dashboard/Dashboard';
 function App() {
@@ -14,15 +14,15 @@ function App() {
         <Router>
           <Switch>
 
-      
-          <Route path="/dashboard">
-<Dashboard></Dashboard>
-          </Route>
 
-          
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+
+
           </Switch>
         </Router>
-     
+
       </AuthProvider>
 
 
