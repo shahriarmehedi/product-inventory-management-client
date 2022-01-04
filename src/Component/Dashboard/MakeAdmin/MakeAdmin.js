@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     const habdleAdminSubmit=e=>{
         e.preventDefault()
         const user={email}
-        fetch('http://locahost/5000/users/admin',{
+        fetch('http://localhost:5000/users/admin',{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

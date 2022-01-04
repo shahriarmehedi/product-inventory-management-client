@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider';
 import Dashboard from './Component/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
           <Route exact path="/">
             <Login></Login>
           </Route>
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
+
+          <PrivateRoute  path="/dashboard">
+          <Dashboard></Dashboard>
+          </PrivateRoute>
+         
         </Switch>
       </Router>
     </AuthProvider>
