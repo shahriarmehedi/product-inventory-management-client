@@ -18,12 +18,14 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
-import useFirebase from '../../hooks/useFirebase';
+
 import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-import AdminDashboard from './AdminDashboard/AdminDashboard';
+
 import AddProducts from '../../pages/AddProducts/AddProducts';
+import useAuth from '../../hooks/useAuth';
+import ShowProduct from '../ShowProduct/ShowProduct';
 
 
 
@@ -32,7 +34,7 @@ const drawerWidth = 240;
 function Dashboard(props) {
 
   const { window } = props;
-  const { user, logOut } = useFirebase()
+  const { user, logOut } = useAuth()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
@@ -50,7 +52,7 @@ function Dashboard(props) {
         user && <div className='text-center'><Box>
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/makeAdmin`}>Make an Admin</Link><br /> <br />
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add New Product</Link><br /> <br />
-          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/admindashboard`}>Admin Dashboard</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/showproduct`}>All Products</Link><br /> <br />
           <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
 
         </Box></div>
@@ -144,8 +146,8 @@ function Dashboard(props) {
 
 
 
-          <Route path={`${path}/admindashboard`}>
-            <AdminDashboard></AdminDashboard>
+          <Route path={`${path}/showproduct`}>
+         <ShowProduct></ShowProduct>
           </Route>
 
 
