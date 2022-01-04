@@ -10,12 +10,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-
   Switch,
   Route,
   Link,
-
-  useRouteMatch
+  useRouteMatch,
 } from "react-router-dom";
 
 import useFirebase from '../../hooks/useFirebase';
@@ -32,7 +30,7 @@ const drawerWidth = 240;
 function Dashboard(props) {
 
   const { window } = props;
-  const { user, logOut } = useFirebase()
+  const { user, logOut } = useFirebase();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
@@ -43,7 +41,7 @@ function Dashboard(props) {
     <div className='text-center'>
       <Toolbar />
       <Divider />
-      <Link className='bg-teal-400 px-10  py-2 rounded text-white mt-5' to={`${url}/payment`}>Make Payment</Link><br /> <br />
+      <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to={`${url}/payment`}>Make Payment</Link><br /> <br />
 
 
       {
@@ -95,7 +93,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+            Product Inventory Management System
           </Typography>
         </Toolbar>
       </AppBar>

@@ -16,7 +16,7 @@ const useFirebase = () => {
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
-                const destination = location?.state?.from || '/dashboard';
+                const destination = location?.state?.from || '/home';
                 history.replace(destination);
                 ////////// SET ERROR //////////
             }).catch(error => {

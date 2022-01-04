@@ -5,7 +5,7 @@ const AdminDashboard = () => {
 
   return (
     <div>
-      <h1 style={{ fontWeight: 'bold' }}>Show All The Users!!</h1>
+      <h1 className='font-bold text-2xl'>Show All The Users!!</h1>
       <table>
         <thead>
           <th>Company</th>
