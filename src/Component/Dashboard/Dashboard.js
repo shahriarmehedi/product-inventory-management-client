@@ -14,6 +14,7 @@ import {
   Route,
   Link,
   useRouteMatch,
+  NavLink
 } from "react-router-dom";
 
 import useFirebase from '../../hooks/useFirebase';
@@ -30,7 +31,7 @@ const drawerWidth = 240;
 function Dashboard(props) {
 
   const { window } = props;
-  const { user, logOut } = useFirebase();
+  const { user, logOut } = useFirebase()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {

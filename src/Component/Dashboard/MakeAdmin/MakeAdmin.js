@@ -10,13 +10,19 @@ const MakeAdmin = () => {
     const handleAdminSubmit = e => {
         e.preventDefault()
         const user = { email }
-        fetch('http://locahost/5000/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount)
+                    console.log(data)
+                setSuccess(true)
+            })
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount)

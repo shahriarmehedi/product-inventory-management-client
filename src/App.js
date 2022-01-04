@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './context/AuthProvider';
 import Dashboard from './Component/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import HomePage from './pages/HomePage/HomePage';
 
 function App() {
@@ -19,9 +20,11 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path="/dashboard">
+
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
+
         </Switch>
       </Router>
     </AuthProvider>
