@@ -4,23 +4,13 @@ import AdminDashboard from '../Dashboard/AdminDashboard/AdminDashboard';
 
 
 const ShowProduct = () => {
-<<<<<<< HEAD
    
     const[products,setProducts]=useState([])
 useEffect(()=>{
-    fetch('https://serene-fortress-92200.herokuapp.co/products')
+    fetch('https://serene-fortress-92200.herokuapp.com/products')
     .then(res=>res.json())
     .then(data=>setProducts(data))
 })
-=======
-
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('https://serene-fortress-92200.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    })
->>>>>>> 7d3f6eefd3aecb18a1d01ca6ee1bae3581014caa
     return (
         <div>
             <Container>
