@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
-import { getAuth,signOut,onAuthStateChanged,signInWithPopup, GoogleAuthProvider} from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.initialize";
 
 initializeAuthentication();
 const useFirebase = () => {
     //const[isLoading,setIsLoading]=useState(true)
-   // const [admin,setAdmin]=useState(false)
+    // const [admin,setAdmin]=useState(false)
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const auth = getAuth();
@@ -47,7 +47,7 @@ const useFirebase = () => {
 
     // useEffect(()=>{
 
-    //     fetch(`http://localhost:5000/users/${user.email}`)
+    //     fetch(`https://serene-fortress-92200.herokuapp.com/users/${user.email}`)
     //     .then(res=>res.json())
     //     .then(data=>setAdmin(data.admin))
     //     },[user.email])
@@ -55,7 +55,7 @@ const useFirebase = () => {
     // const saveUser=(email,displayName,method)=>{
 
     //     const user={email,displayName}
-    //     fetch('http://localhost:5000/users',{
+    //     fetch('https://serene-fortress-92200.herokuapp.com/users',{
     //       method:method,
     //       headers:{
     //         'content-type':'application/json'
