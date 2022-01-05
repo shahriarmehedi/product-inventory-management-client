@@ -7,7 +7,7 @@ const ShowProduct = () => {
    
     const[products,setProducts]=useState([])
 useEffect(()=>{
-    fetch('http://localhost:5000/products')
+    fetch('https://serene-fortress-92200.herokuapp.com/?fbclid=IwAR1_KDPQoDRGPQ_FAIhxEN1WzXj2E58lpJzCdJDqN-QbNcIRprSzfQULIaE/products')
     .then(res=>res.json())
     .then(data=>setProducts(data))
 })
