@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Product Management Inventory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple application for project management inventory system. This is the frontend part of this site. In this part, the data are recieved to the client site using api.
 
-## Available Scripts
+## The client side overview
 
-In the project directory, you can run:
+- User will able to login in an existing account or can create a new account.
+- User accounts can be maintained through Firebase
+- Logged in user can only see his products in the inventory
+- Based on login information, the dashboard will be updated
+- Users can log in or sign up using Google also.
 
-### `npm start`
+### On Dashboard
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User can see the dashboard panel after a successful log in to his account.
+- Dashboard panel contains informations about users uploaded product data.
+- User can edit or delete any entry and the dashboard will update accordingly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Add Product section
 
-### `npm test`
+- Logged in user can add products in this section.
+- Product input section will contain input fields like
+- Product name, Amount, Image, Weight/Measurement, price etc
+- Data will store to the mongodb database.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Update/Delete Products
 
-### `npm run build`
+- Product entry can be edited or deleted by a logged in user
+- Updating or deleting any product will immediately affect the product list and also affect the dashboard panel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Node JS
+- Express JS
+- MongoDB
+- Heroku
