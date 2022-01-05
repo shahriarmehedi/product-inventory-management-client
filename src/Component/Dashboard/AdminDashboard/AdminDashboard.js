@@ -2,7 +2,7 @@ import React from 'react';
 import './AdminDashboard.css'
 
 const AdminDashboard = (props) => {
-  const {productName,productCategory,productPrice,productQuantity,productImageURL} = props.products;
+  const { productName, productCategory, productPrice, productQuantity, productImageURL } = props.products;
   return (
     <div>
       <h1 style={{ fontWeight: 'bold' }}>Show All The Products!!</h1>

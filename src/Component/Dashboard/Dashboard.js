@@ -10,22 +10,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-
   Switch,
   Route,
   Link,
-
-  useRouteMatch
+  useRouteMatch,
+  NavLink
 } from "react-router-dom";
 
-
+import useFirebase from '../../hooks/useFirebase';
 import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-
+import AdminDashboard from './AdminDashboard/AdminDashboard';
 import AddProducts from '../../pages/AddProducts/AddProducts';
-import useAuth from '../../hooks/useAuth';
-import ShowProduct from '../ShowProduct/ShowProduct';
 
 
 
@@ -34,7 +31,7 @@ const drawerWidth = 240;
 function Dashboard(props) {
 
   const { window } = props;
-  const { user, logOut } = useAuth()
+  const { user, logOut } = useFirebase()
   const [mobileOpen, setMobileOpen] = React.useState(false);
   let { path, url } = useRouteMatch();
   const handleDrawerToggle = () => {
@@ -45,19 +42,33 @@ function Dashboard(props) {
     <div className='text-center'>
       <Toolbar />
       <Divider />
-      <Link className='bg-teal-400 px-10  py-2 rounded text-white mt-5' to={`${url}/payment`}>Make Payment</Link><br /> <br />
+      <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to={`${url}/payment`}>Make Payment</Link><br /> <br />
 
 
       {
         user && <div className='text-center'><Box>
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/makeAdmin`}>Make an Admin</Link><br /> <br />
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add New Product</Link><br /> <br />
-          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/showproduct`}>All Products</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/admindashboard`}>Admin Dashboard</Link><br /> <br />
           <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
 
         </Box></div>
       }
-</div>
+
+
+      {/* <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List> */}
+
+
+    </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -83,7 +94,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+            Product Inventory Management System
           </Typography>
         </Toolbar>
       </AppBar>
@@ -146,8 +157,8 @@ function Dashboard(props) {
 
 
 
-          <Route path={`${path}/showproduct`}>
-         <ShowProduct></ShowProduct>
+          <Route path={`${path}/admindashboard`}>
+            <AdminDashboard></AdminDashboard>
           </Route>
 
 
