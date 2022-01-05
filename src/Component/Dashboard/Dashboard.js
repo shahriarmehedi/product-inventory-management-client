@@ -50,26 +50,12 @@ function Dashboard(props) {
         user && <div className='text-center'><Box>
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/makeAdmin`}>Make an Admin</Link><br /> <br />
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add New Product</Link><br /> <br />
-          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/admindashboard`}>Admin Dashboard</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/showproduct`}>Show Product</Link><br /> <br />
           <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
 
         </Box></div>
       }
-
-
-      {/* <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
-
-
-    </div>
+  </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -158,7 +144,7 @@ function Dashboard(props) {
 
 
 
-          <Route path={`${path}/admindashboard`}>
+          <Route path={`${path}/showproduct`}>
            <ShowProduct></ShowProduct>
           </Route>
 
