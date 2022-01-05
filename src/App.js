@@ -14,10 +14,10 @@ function App() {
             <Login></Login>
           </Route>
 
-          <PrivateRoute  path="/dashboard">
-          <Dashboard></Dashboard>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
           </PrivateRoute>
-         
+
         </Switch>
       </Router>
     </AuthProvider>
