@@ -55,7 +55,7 @@ function Dashboard(props) {
 
         </Box></div>
       }
-  </div>
+    </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -145,7 +145,7 @@ function Dashboard(props) {
 
 
           <Route path={`${path}/showproduct`}>
-           <ShowProduct></ShowProduct>
+            <ShowProduct></ShowProduct>
           </Route>
 
 
