@@ -18,7 +18,6 @@ import {
 } from "react-router-dom";
 
 import useFirebase from '../../hooks/useFirebase';
-import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
 
@@ -43,18 +42,18 @@ function Dashboard(props) {
     <div className='text-center'>
       <Toolbar />
       <Divider />
-      <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to={`${url}/payment`}>Make Payment</Link><br /> <br />
-
-
+      <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to="/">Go to Home</Link><br /> <br />
       {
         user && <div className='text-center'><Box>
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/showproduct`}>View products</Link><br /> <br />
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add a Product</Link><br /> <br />
           <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/makeAdmin`}>Make an Admin</Link><br /> <br />
-          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/addProducts`}>Add New Product</Link><br /> <br />
-          <Link className='bg-teal-400 px-10 py-2 rounded text-white' to={`${url}/showproduct`}>Show Product</Link><br /> <br />
-          <Button variant="text" onClick={logOut} color="inherit">LogOut</Button>
+          <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to={`${url}/payment`}>Make Payment</Link><br /> <br />
+          <button className='bg-red-500 px-10 py-2 rounded text-white my-10' variant="text" onClick={logOut} color="inherit">LogOut</button>
 
         </Box></div>
       }
+
     </div>
   );
 

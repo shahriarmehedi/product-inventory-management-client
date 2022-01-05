@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react"
 import { getAuth, signOut, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.initialize";
+import { useHistory } from "react-router-dom";
 
 initializeAuthentication();
 const useFirebase = () => {
@@ -11,6 +12,7 @@ const useFirebase = () => {
     const [error, setError] = useState('');
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    const history = useHistory();
 
     ///////// GOOGLE SIGN IN POPUP //////////
     const signInUsingGoogle = (location, history) => {
@@ -18,7 +20,7 @@ const useFirebase = () => {
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
-                const destination = location?.state?.from || '/home';
+                const destination = location?.state?.from || '/dashboard/showproduct';
                 history.replace(destination);
                 ////////// SET ERROR //////////
             }).catch(error => {
@@ -32,6 +34,8 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setUser({});
+                history.replace('/');
+                window.location.reload();
             })
     }
     /////// OBSERVE WHEATHER AUTH STATE CHANGED OR NOT ///////
