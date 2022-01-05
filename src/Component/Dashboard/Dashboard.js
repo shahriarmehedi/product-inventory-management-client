@@ -10,12 +10,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-
   Switch,
   Route,
   Link,
-
-  useRouteMatch
+  useRouteMatch,
+  NavLink
 } from "react-router-dom";
 
 import useFirebase from '../../hooks/useFirebase';
@@ -43,7 +42,7 @@ function Dashboard(props) {
     <div className='text-center'>
       <Toolbar />
       <Divider />
-      <Link className='bg-teal-400 px-10  py-2 rounded text-white mt-5' to={`${url}/payment`}>Make Payment</Link><br /> <br />
+      <Link className='bg-teal-400 px-10 py-2 rounded text-white my-10' to={`${url}/payment`}>Make Payment</Link><br /> <br />
 
 
       {
@@ -55,7 +54,21 @@ function Dashboard(props) {
 
         </Box></div>
       }
-</div>
+
+
+      {/* <List>
+        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List> */}
+
+
+    </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -81,7 +94,7 @@ function Dashboard(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Dashboard
+            Product Inventory Management System
           </Typography>
         </Toolbar>
       </AppBar>

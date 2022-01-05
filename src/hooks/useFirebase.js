@@ -18,7 +18,7 @@ const useFirebase = () => {
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
-                const destination = location?.state?.from || '/dashboard';
+                const destination = location?.state?.from || '/home';
                 history.replace(destination);
                 ////////// SET ERROR //////////
             }).catch(error => {
@@ -26,56 +26,7 @@ const useFirebase = () => {
             })
     }
 
-//register with email and password
 
-// const registerUser=(email,password,name,history)=>{
-//     setIsLoading(true)
-//     createUserWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-  
-//     setError('')
-//    const newUser={email,displayName:name}
-//    setUser(newUser)
-// saveUser(email,name,'POST')
-//    updateProfile(auth.currentUser, {
-//     displayName: name
-    
-//   }).catch((error) => {
-    
-//   });
-  
-//    history.replace('/dashboard')
-//   })
-//   .catch((error) => {
-  
-//     setError(error.message);
-    
-//   }).finally(()=>{
-//       setIsLoading(false)
-//   });
-// }
-
-
-//loginuser
-
-// const loginUser=(email,password,location,history)=>{
-//     setIsLoading(true)
-//     signInWithEmailAndPassword(auth, email, password)
-//   .then((userCredential) => {
-  
-//     const destination=location?.state?.from||'/dashboard'
-//     history.replace(destination)
-//     setError('')
-  
-//   })
-//   .catch((error) => {
-  
-//     setError(error.message);
-//   }).finally(()=>{
-//     setIsLoading(false)
-// });
-
-// }
     ////////// USER LOG OUT //////////
     const logOut = () => {
         signOut(auth)
