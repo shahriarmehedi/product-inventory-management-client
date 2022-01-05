@@ -21,8 +21,9 @@ import useFirebase from '../../hooks/useFirebase';
 import { Button } from '@mui/material';
 import Payment from './Payment/Payment';
 import MakeAdmin from './MakeAdmin/MakeAdmin';
-import AdminDashboard from './AdminDashboard/AdminDashboard';
+
 import AddProducts from '../../pages/AddProducts/AddProducts';
+import ShowProduct from '../ShowProduct/ShowProduct';
 
 
 
@@ -158,7 +159,7 @@ function Dashboard(props) {
 
 
           <Route path={`${path}/admindashboard`}>
-            <AdminDashboard></AdminDashboard>
+           <ShowProduct></ShowProduct>
           </Route>
 
 
