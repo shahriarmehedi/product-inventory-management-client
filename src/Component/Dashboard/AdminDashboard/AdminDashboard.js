@@ -22,29 +22,29 @@ const AdminDashboard = (props) => {
             <td>{productQuantity}</td>
             <td>{productImageURL}</td>
           </tr>
-          <tr>
-            <td>{productName}</td>
+          {/* <tr>
+          <td>{productName}</td>
+            <td>{productCategory}</td>
+            <td>{productPrice}</td>
+            <td>{productQuantity}</td>
+            <td>{productImageURL}</td>
+          </tr> */}
+          {/* <tr>
+          <td>{productName}</td>
+            <td>{productCategory}</td>
+            <td>{productPrice}</td>
+            <td>{productQuantity}</td>
+            <td>{productImageURL}</td>
+          </tr> */}
+          {/* <tr>
+          <td>{productName}</td>
             <td>{productCategory}</td>
             <td>{productPrice}</td>
             <td>{productQuantity}</td>
             <td>{productImageURL}</td>
           </tr>
-          <tr>
-            <td>{productName}</td>
-            <td>{productCategory}</td>
-            <td>{productPrice}</td>
-            <td>{productQuantity}</td>
-            <td>{productImageURL}</td>
-          </tr>
-          <tr>
-            <td>{productName}</td>
-            <td>{productCategory}</td>
-            <td>{productPrice}</td>
-            <td>{productQuantity}</td>
-            <td>{productImageURL}</td>
-          </tr>
-
-
+       */}
+        
         </tbody>
       </table>
     </div>
